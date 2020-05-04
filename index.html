@@ -1,60 +1,318 @@
 
-<!doctype html>
-<!--[if lte IE 9]>
-<html lang="en" class="oldie">
-<![endif]-->
-<!--[if gt IE 9]><!-->
+<!DOCTYPE html>
 <html lang="en">
-<!--<![endif]-->
 <head>
-<meta charset="utf-8">
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="cZUihHkmExBM/s51iT017l9yCwJM5u7IIN1vhVphgxOGQ6kSNaP5+XPxmxTghrVGiGuSo+di/yentIshKCBgvg==" />
-
-<title>CodePen - FCC: Tribute Page</title>
-<link rel="stylesheet" media="screen" href="https://static.codepen.io/assets/fullpage/fullpage-4de243a40619a967c0bf13b95e1ac6f8de89d943b7fc8710de33f681fe287604.css" />
-<link rel="stylesheet" media="all" href="https://static.codepen.io/assets/global/global-afdbd2ecf3676f6b640e1f6a3d00b322f9723aac03bcc55a16fbd70bc205a81a.css" />
-<link rel="stylesheet" media="screen" href="https://static.codepen.io/assets/packs/css/everypage-77fcf5b3.css" />
-<link rel="stylesheet" media="all" href="https://static.codepen.io/assets/page/page-0ac0b76f7300b4869cf48a740324aa5955915c0ac804ffcf3e5ef3fe1921f2ce.css" />
-<link rel="stylesheet" media="all" href="https://static.codepen.io/assets/editor/editor-e4a3cbb6462f9539b9eb33f50f0c1b5cad5f015bbcadea50dcb5a15d1aae7541.css" />
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic" rel="stylesheet" />
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@CodePen">
-<meta name="twitter:title" content="FCC: Tribute Page">
-<meta name="twitter:description" content="...">
-<meta name="twitter:image" content="https://screenshot.codepen.io/260521.zNqgVx.ba7c3a8e-c623-40a1-a411-2c17b811ec99.png">
-<meta name="twitter:creator" content="@freeCodeCamp">
-<meta property="og:image" content="https://codepen.io/freeCodeCamp/pen/zNqgVx/image/large.png" itemprop="thumbnailUrl">
-<meta property="og:title" content="FCC: Tribute Page">
-<meta property="og:url" content="https://codepen.io/freeCodeCamp/details/zNqgVx">
-<meta property="og:site_name" content="CodePen">
-<meta property="og:description" content="...">
-<link rel="alternate" type="application/json+oembed" href="https://codepen.io/api/oembed?url=https%3A%2F%2Fcodepen.io%2FfreeCodeCamp%2Fpen%2FzNqgVx&format=json" title="FCC: Tribute Page" />
+<meta charset="UTF-8">
 <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
 <meta name="apple-mobile-web-app-title" content="CodePen">
 <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
 <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
-<script>/* Firefox needs this to prevent FOUC. Wow. */</script>
+<meta charset="utf-8">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>CodePen - FCC: Tribute Page</title>
+<link rel="stylesheet" media="screen" href="https://static.codepen.io/assets/fullpage/fullpage-4de243a40619a967c0bf13b95e1ac6f8de89d943b7fc8710de33f681fe287604.css" />
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic" rel="stylesheet" />
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - FCC: Tribute Page</title>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+<style>
+    html { font-size: 15px; }
+    html, body { margin: 0; padding: 0; min-height: 100%; }
+    body { height:100%; display: flex; flex-direction: column; }
+    .referer-warning {
+      background: black;
+      box-shadow: 0 2px 5px rgba(0,0,0, 0.5);
+      padding: 0.75em;
+      color: white;
+      text-align: center;
+      font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+      line-height: 1.2;
+      font-size: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+    .referer-warning h1 { font-size: 1.2rem; margin: 0; }
+    .referer-warning a { color: #56bcf9; } /* $linkColorOnBlack */
+  </style>
 </head>
-<body class="fullpage logged-out sidebar-false">
-<header id="main-header" class="main-header"></header>
-<div class="oldie-header">
-<a href="https://codepen.io/freeCodeCamp/pen/zNqgVx">Edit Pen</a>
-</div>
+<body class="">
 <div id="result-iframe-wrap" role="main">
-<iframe id="result" src="https://cdpn.io/freeCodeCamp/fullpage/zNqgVx" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; microphone; midi; payment; vr" allowTransparency="true" allowpaymentrequest="true" allowfullscreen="true" class="result-iframe"></iframe>
+<iframe id="result" srcdoc="
+<!DOCTYPE html>
+<html lang=&quot;en&quot; >
+
+<head>
+
+  <meta charset=&quot;UTF-8&quot;>
+  
+<link rel=&quot;apple-touch-icon&quot; type=&quot;image/png&quot; href=&quot;https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png&quot; />
+<meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;CodePen&quot;>
+
+<link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico&quot; />
+
+<link rel=&quot;mask-icon&quot; type=&quot;&quot; href=&quot;https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg&quot; color=&quot;#111&quot; />
+
+
+  <title>CodePen - FCC: Tribute Page</title>
+  
+  
+  
+  
+  
+<style>
+html {
+  /* Setting a base font size of 10px give us easier rem calculations
+     Info: 1rem === 10px, 1.5rem === 15px, 2rem === 20px and so forth
+   */
+  font-size: 10px;
+}
+
+body {
+  /* Native font stack https://getbootstrap.com/docs/4.2/content/reboot/#native-font-stack */
+  font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Roboto&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-align: center;
+  color: #333;
+  margin: 0;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 460px) {
+  h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
+}
+
+h2 {
+  font-size: 3.25rem;
+}
+
+a {
+  color: #477ca7;
+}
+
+a:visited {
+  color: #74638f;
+}
+
+#main {
+  margin: 30px 8px;
+  padding: 15px;
+  border-radius: 5px;
+  background: #eee;
+}
+
+@media (max-width: 460px) {
+  #main {
+    margin: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  margin: 0 auto;
+}
+
+#img-div {
+  background: white;
+  padding: 10px;
+  margin: 0;
+}
+
+#img-caption {
+  margin: 15px 0 5px 0;
+}
+
+@media (max-width: 460px) {
+  #img-caption {
+    font-size: 1.4rem;
+  }
+}
+
+#headline {
+  margin: 50px 0;
+  text-align: center;
+}
+
+ul {
+  max-width: 550px;
+  margin: 0 auto 50px auto;
+  text-align: left;
+  line-height: 1.6;
+}
+
+li {
+  margin: 16px 0;
+}
+
+blockquote {
+  font-style: italic;
+  max-width: 545px;
+  margin: 0 auto 50px auto;
+  text-align: left;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage(&quot;resize&quot;, &quot;*&quot;);
+  }
+</script>
+
+
+</head>
+
+<body translate=&quot;no&quot; >
+  <main id=&quot;main&quot;>
+  <h1 id=&quot;title&quot;>Dr. Norman Borlaug</h1>
+  <p>The man who saved a billion lives</p>
+  <figure id=&quot;img-div&quot;>
+    <img
+      id=&quot;image&quot;
+      src=&quot;https://c2.staticflickr.com/4/3689/10613180113_fdf7bcd316_b.jpg&quot;
+      alt=&quot;Dr. Norman Borlaug seen standing in Mexican wheat field with a group of biologists&quot;
+    />
+    <figcaption id=&quot;img-caption&quot;>
+      Dr. Norman Borlaug, third from the left, trains biologists in Mexico on how
+      to increase wheat yields - part of his life-long war on hunger.
+    </figcaption>
+  </figure>
+  <section id=&quot;tribute-info&quot;>
+    <h3 id=&quot;headline&quot;>Here's a time line of Dr. Borlaug's life:</h3>
+    <ul>
+      <li><strong>1914</strong> - Born in Cresco, Iowa</li>
+      <li>
+        <strong>1933</strong> - Leaves his family's farm to attend the
+        University of Minnesota, thanks to a Depression era program known as the
+        &quot;National Youth Administration&quot;
+      </li>
+      <li>
+        <strong>1935</strong> - Has to stop school and save up more money. Works
+        in the Civilian Conservation Corps, helping starving Americans. &quot;I saw
+        how food changed them&quot;, he said. &quot;All of this left scars on me.&quot;
+      </li>
+      <li>
+        <strong>1937</strong> - Finishes university and takes a job in the US
+        Forestry Service
+      </li>
+      <li>
+        <strong>1938</strong> - Marries wife of 69 years Margret Gibson. Gets
+        laid off due to budget cuts. Inspired by Elvin Charles Stakman, he
+        returns to school study under Stakman, who teaches him about breeding
+        pest-resistent plants.
+      </li>
+      <li>
+        <strong>1941</strong> - Tries to enroll in the military after the Pearl
+        Harbor attack, but is rejected. Instead, the military asked his lab to
+        work on waterproof glue, DDT to control malaria, disinfectants, and
+        other applied science.
+      </li>
+      <li>
+        <strong>1942</strong> - Receives a Ph.D. in Genetics and Plant Pathology
+      </li>
+      <li>
+        <strong>1944</strong> - Rejects a 100% salary increase from Dupont,
+        leaves behind his pregnant wife, and flies to Mexico to head a new plant
+        pathology program. Over the next 16 years, his team breeds 6,000
+        different strains of disease resistent wheat - including different
+        varieties for each major climate on Earth.
+      </li>
+      <li>
+        <strong>1945</strong> - Discovers a way to grown wheat twice each
+        season, doubling wheat yields
+      </li>
+      <li>
+        <strong>1953</strong> - crosses a short, sturdy dwarf breed of wheat
+        with a high-yeidling American breed, creating a strain that responds
+        well to fertilizer. It goes on to provide 95% of Mexico's wheat.
+      </li>
+      <li>
+        <strong>1962</strong> - Visits Delhi and brings his high-yielding
+        strains of wheat to the Indian subcontinent in time to help mitigate
+        mass starvation due to a rapidly expanding population
+      </li>
+      <li><strong>1970</strong> - receives the Nobel Peace Prize</li>
+      <li>
+        <strong>1983</strong> - helps seven African countries dramatically
+        increase their maize and sorghum yields
+      </li>
+      <li>
+        <strong>1984</strong> - becomes a distinguished professor at Texas A&amp;M
+        University
+      </li>
+      <li>
+        <strong>2005</strong> - states &quot;we will have to double the world food
+        supply by 2050.&quot; Argues that genetically modified crops are the only way
+        we can meet the demand, as we run out of arable land. Says that GM crops
+        are not inherently dangerous because &quot;we've been genetically modifying
+        plants and animals for a long time. Long before we called it science,
+        people were selecting the best breeds.&quot;
+      </li>
+      <li><strong>2009</strong> - dies at the age of 95.</li>
+    </ul>
+    <blockquote
+      cite=&quot;http://news.rediff.com/report/2009/sep/14/pm-pays-tribute-to-father-of-green-revolution-borlaug.htm&quot;
+    >
+      <p>
+        &quot;Borlaug's life and achievement are testimony to the far-reaching
+        contribution that one man's towering intellect, persistence and
+        scientific vision can make to human peace and progress.&quot;
+      </p>
+      <cite>-- Indian Prime Minister Manmohan Singh</cite>
+    </blockquote>
+    <h3>
+      If you have time, you should read more about this incredible human being
+      on his
+      <a
+        id=&quot;tribute-link&quot;
+        href=&quot;https://en.wikipedia.org/wiki/Norman_Borlaug&quot;
+        target=&quot;_blank&quot;
+        >Wikipedia entry</a
+      >.
+    </h3>
+  </section>
+</main>
+    <script src=&quot;https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js&quot;></script>
+
+  <script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script>
+  
+      <script id=&quot;rendered-js&quot; >
+// coded by @ChaituVR
+const projectName = 'tribute-page';
+localStorage.setItem('example_project', 'Tribute Page');
+//# sourceURL=pen.js
+    </script>
+
+  
+  
+
+</body>
+
+</html>
+ 
+" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation  allow-scripts" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; microphone; midi; payment; vr" allowTransparency="true" allowpaymentrequest="true" allowfullscreen="true" class="result-iframe">
+      </iframe>
 </div>
-<div id="full-view-ad"></div>
-<input type="hidden" id="init-data" value="{&quot;__browser&quot;:{&quot;device&quot;:&quot;unknown&quot;,&quot;mobile&quot;:null,&quot;name&quot;:&quot;chrome&quot;,&quot;platform&quot;:&quot;pc&quot;,&quot;version&quot;:&quot;81&quot;},&quot;__analytics&quot;:{&quot;controllerActionName&quot;:&quot;show_secure_full_page&quot;,&quot;controllerName&quot;:&quot;fullpage&quot;,&quot;enabled&quot;:true},&quot;__remote_addr&quot;:&quot;119.82.134.131&quot;,&quot;__CPDATA&quot;:{&quot;domain_iframe&quot;:&quot;https://cdpn.io&quot;,&quot;host&quot;:&quot;codepen.io&quot;,&quot;iframe_allow&quot;:&quot;accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; microphone; midi; payment; vr&quot;,&quot;iframe_sandbox&quot;:&quot;allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts&quot;},&quot;__env&quot;:&quot;production&quot;,&quot;__turnOffJS&quot;:false,&quot;__constants&quot;:{&quot;grid_iframe_sandbox_attributes&quot;:&quot;allow-scripts allow-pointer-lock allow-same-origin&quot;},&quot;__svg_sprite&quot;:&quot;/svg_sprite?v=9637ff09&quot;,&quot;__stream_analytics&quot;:{&quot;api_key&quot;:&quot;64puhuch8n2j&quot;,&quot;token&quot;:&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNvdXJjZSI6ImFuYWx5dGljcyIsImFjdGlvbiI6IioiLCJ1c2VyX2lkIjoiKiJ9.K-TP9-k-_ZnktGVf_CxDVZyUXKzGMFVJ--dNJ-20_t4&quot;},&quot;__user&quot;:{&quot;anon&quot;:true,&quot;base_url&quot;:&quot;/anon/&quot;,&quot;current_team_id&quot;:0,&quot;current_team_hashid&quot;:&quot;YdEzGn&quot;,&quot;hashid&quot;:&quot;VoDkNZ&quot;,&quot;id&quot;:1,&quot;itemType&quot;:&quot;user&quot;,&quot;name&quot;:&quot;Captain Anonymous&quot;,&quot;owner_id&quot;:&quot;VoDkNZYdEzGn&quot;,&quot;paid&quot;:false,&quot;tier&quot;:0,&quot;username&quot;:&quot;anon&quot;,&quot;created_at&quot;:null},&quot;__firestore&quot;:{&quot;config&quot;:{&quot;apiKey&quot;:&quot;AIzaSyBgLAe7N_MdFpuVofMkcQLGwwhUu5tuxls&quot;,&quot;authDomain&quot;:&quot;codepen-store-production.firebaseapp.com&quot;,&quot;databaseURL&quot;:&quot;https://codepen-store-production.firebaseio.com&quot;,&quot;disabled&quot;:false,&quot;projectId&quot;:&quot;codepen-store-production&quot;},&quot;token&quot;:&quot;eyJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJodHRwczovL2lkZW50aXR5dG9vbGtpdC5nb29nbGVhcGlzLmNvbS9nb29nbGUuaWRlbnRpdHkuaWRlbnRpdHl0b29sa2l0LnYxLklkZW50aXR5VG9vbGtpdCIsImNsYWltcyI6eyJvd25lcklkIjoiVm9Ea05aWWRFekduIiwiYWRtaW4iOmZhbHNlfSwiZXhwIjoxNTg4NTg3MjI0LCJpYXQiOjE1ODg1ODM2MjQsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLThva3lsQGNvZGVwZW4tc3RvcmUtcHJvZHVjdGlvbi5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsInN1YiI6ImZpcmViYXNlLWFkbWluc2RrLThva3lsQGNvZGVwZW4tc3RvcmUtcHJvZHVjdGlvbi5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsInVpZCI6IlZvRGtOWiJ9.6yCHrJsSQ-UWR2P3AySFcSlk_OMqBV-7FE1DgZhgSBJuvBcipa8reysWJrfWjjifx1SmyRLjmkDHgAR8TwoJBiq4Yt4aysXW2GjilNIsvr69ySmy7-kayZT3j7HGsNXLGX3q1Bss-E0DLj9F8IYSpuQRDxQxidYzkpQEhTCm0aENb_U7QgPIVISHjc0Dj2QkdSAU7DADw_Uns-FYFXwxAocnxDdNYAQiz8Q-m-CWvXXWbO9a5dW2uW8U7pfC0FD_lHRcQuilDM0rpNudIpsN0a-DBguGO28YggD8qzk5Aj7c_VCE715b5Itcr-Q-m0eT3Jd7V-tK6oy6tCuDm6LE1Q&quot;},&quot;__graphql&quot;:{&quot;data&quot;:{&quot;sessionUser&quot;:{&quot;id&quot;:&quot;VoDkNZ&quot;,&quot;name&quot;:&quot;Captain Anonymous&quot;,&quot;avatar80&quot;:&quot;https://static.codepen.io/assets/avatars/user-avatar-80x80-bdcd44a3bfb9a5fd01eb8b86f9e033fa1a9897c3a15b33adfc2649a002dab1b6.png&quot;,&quot;avatar512&quot;:&quot;https://static.codepen.io/assets/avatars/user-avatar-512x512-6e240cf350d2f1cc07c2bed234c3a3bb5f1b237023c204c782622e80d6b212ba.png&quot;,&quot;canCreatePosts&quot;:false,&quot;currentContext&quot;:{&quot;id&quot;:&quot;VoDkNZ&quot;,&quot;baseUrl&quot;:&quot;/anon&quot;,&quot;title&quot;:&quot;Captain Anonymous&quot;,&quot;name&quot;:&quot;Captain Anonymous&quot;,&quot;avatar80&quot;:&quot;https://static.codepen.io/assets/avatars/user-avatar-80x80-bdcd44a3bfb9a5fd01eb8b86f9e033fa1a9897c3a15b33adfc2649a002dab1b6.png&quot;,&quot;avatar512&quot;:&quot;https://static.codepen.io/assets/avatars/user-avatar-512x512-6e240cf350d2f1cc07c2bed234c3a3bb5f1b237023c204c782622e80d6b212ba.png&quot;,&quot;username&quot;:&quot;anon&quot;,&quot;contextType&quot;:&quot;USER&quot;,&quot;projectLimitations&quot;:{&quot;projects&quot;:0,&quot;usedProjects&quot;:0,&quot;__typename&quot;:&quot;ProjectLimitations&quot;},&quot;privateByDefault&quot;:false,&quot;__typename&quot;:&quot;User&quot;},&quot;currentTeamId&quot;:null,&quot;baseUrl&quot;:&quot;/anon&quot;,&quot;username&quot;:&quot;anon&quot;,&quot;admin&quot;:false,&quot;anon&quot;:true,&quot;pro&quot;:false,&quot;verified&quot;:true,&quot;teams&quot;:[],&quot;permissions&quot;:{&quot;canCreatePrivate&quot;:false,&quot;canUploadAssets&quot;:false,&quot;__typename&quot;:&quot;UserPermissions&quot;},&quot;__typename&quot;:&quot;User&quot;}}},&quot;__item&quot;:&quot;{\&quot;id\&quot;:12110705,\&quot;hashid\&quot;:\&quot;zNqgVx\&quot;,\&quot;itemType\&quot;:\&quot;pen\&quot;,\&quot;owner_id\&quot;:\&quot;ePnGnRYdEzGn\&quot;,\&quot;user_id\&quot;:260521,\&quot;slug_hash\&quot;:\&quot;zNqgVx\&quot;,\&quot;private\&quot;:false,\&quot;slug_hash_private\&quot;:\&quot;6ab2d174184427e1a5760a7bef782034\&quot;}&quot;,&quot;__profiled&quot;:{&quot;id&quot;:260521,&quot;hashid&quot;:&quot;ePnGnR&quot;,&quot;name&quot;:&quot;freeCodeCamp.org&quot;,&quot;username&quot;:&quot;freeCodeCamp&quot;,&quot;type&quot;:&quot;user&quot;,&quot;is_team&quot;:false,&quot;base_url&quot;:&quot;/freeCodeCamp&quot;},&quot;__pageType&quot;:&quot;full&quot;}">
-<div id="popup-overlay" class="overlay popup-overlay"></div>
-<div id="modal-overlay" class="overlay modal-overlay"></div>
-<div id="react-popups" class="react-popups"></div>
-<!-- <script src="https://static.codepen.io/assets/common/everypage-c9e67ee9b7c2932b14d2cc61b5030e706c94919a2e7339f8b9127aa8c189a048.js"></script>
-<script src="https://static.codepen.io/assets/common/analytics_and_notifications-cb30dfc7003bf79ab2d5b2fba6526c0d22c293e76c332aeecdf5a91def052206.js"></script>
-<script src="https://static.codepen.io/assets/packs/js/vendor-44a53e9084d1c4e84e06.chunk.js"></script>
-<script src="https://static.codepen.io/assets/packs/js/2-6b9a0f114f254650a6ed.chunk.js"></script>
-<script src="https://static.codepen.io/assets/packs/js/everypage-f6aaddade0d7431383b6.js"></script>
-<script src="https://static.codepen.io/assets/editor/full/full_page_renderer-357399b32ab6c6b14fbcfa04e0452a60139407a1705fc75a6b257155212c0a68.js"></script> -->
 </body>
 </html>
